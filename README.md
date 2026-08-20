@@ -7,3 +7,4 @@ We chose the trunk-based branching strategy. The length of the project is short 
 Patrick Menninger
 Nathan Jiang
 Liam MacKinnon
+Lillian Chen
