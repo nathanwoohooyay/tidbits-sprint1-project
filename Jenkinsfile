@@ -13,9 +13,7 @@ pipeline {
             post {
                 always {
                     junit testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true
-                    recordCoverage tools: [[parser: 'JACOCO']],
-                        id: 'jacoco', name: 'JaCoCo Coverage',
-                        sourceCodeRetention: 'MODIFIED'
+                    jacoco()
                 }
             }
         }
