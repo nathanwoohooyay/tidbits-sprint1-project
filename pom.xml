@@ -25,6 +25,20 @@
     <build>
         <finalName>team-skeleton</finalName>
         <plugins>
+
+<plugin>
+    <groupId>com.github.spotbugs</groupId>
+    <artifactId>spotbugs-maven-plugin</artifactId>
+    <version>4.8.5.0</version>
+    <dependencies>
+        <dependency>
+	    <groupId>com.github.spotbugs</groupId>
+            <artifactId>spotbugs</artifactId>
+	    <version>4.8.5</version>
+        </dependency>
+    </dependencies>
+</plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
