@@ -5,16 +5,8 @@ We chose the trunk-based branching strategy. The length of the project is short 
 
 ## Team
 Patrick Menninger
-<<<<<<< HEAD
-<<<<<<< HEAD
 Samiya Rowe
-=======
-Nathan Jiang
->>>>>>> 72821d9bfa86614077c3057bd6ab9f917d4b8fde
-
-
-=======
 Nathan Jiang
 Liam MacKinnon
 Lillian Chen
->>>>>>> b610f3918fee8964dc290312fa26b1d21d4f419e
+
