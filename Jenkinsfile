@@ -23,11 +23,6 @@ pipeline {
                 sh 'docker build -t team-skeleton:latest .'
             }
         }
-        stage('Manual Approval') {
-            steps {
-                input message: 'Approve deployment to production?', ok: 'Deploy'
-            }
-        }
         stage('Smoke Test') {
             steps {
                 sh 'docker run --rm team-skeleton:latest'
