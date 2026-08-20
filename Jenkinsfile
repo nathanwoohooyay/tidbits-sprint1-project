@@ -1,5 +1,10 @@
 pipeline {
     agent any
+
+    parameters {
+        booleanParam(name: 'RUN_TESTS', defaultValue: true, description: 'Run unit tests')
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -7,6 +12,9 @@ pipeline {
             }
         }
         stage('Test') {
+            when {
+                expression { params.RUN_TESTS }
+            }
             steps {
                 sh 'mvn -B clean test'
             }
