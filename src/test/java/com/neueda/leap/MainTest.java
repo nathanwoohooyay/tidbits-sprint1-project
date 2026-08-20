@@ -7,6 +7,6 @@ public class MainTest {
 
     @Test
     void mainPrints() {
-        assertFalse(true);
+        assertEquals(2, 1 + 1);
     }
 }

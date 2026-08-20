@@ -6,9 +6,20 @@ pipeline {
                 checkout scm
             }
         }
+        stage('Test') {
+            steps {
+                sh 'mvn -B clean test'
+            }
+            post {
+                always {
+                    junit testResults: 'target/surefire-reports/*.xml', allowEmptyResults: true
+                    jacoco()
+                }
+            }
+        }
         stage('Build Image') {
             steps {
-                sh 'mvn -B clean package -DskipTests'
+                sh 'mvn -B package -DskipTests'
                 sh 'docker build -t team-skeleton:latest .'
             }
         }
