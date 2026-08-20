@@ -5,3 +5,4 @@ We chose the trunk-based branching strategy. The length of the project is short 
 
 ## Team
 Patrick Menninger
+Samiya Rowe
