@@ -31,14 +31,21 @@ pipeline {
                 sh 'docker build -t team-skeleton:latest .'
             }
         }
-        stage('Manual Approval') {
-            steps {
-                input message: 'Approve deployment to production?', ok: 'Deploy'
-            }
-        }
         stage('Smoke Test') {
             steps {
                 sh 'docker run --rm team-skeleton:latest'
+            }
+        }
+        stage('Approval') {
+            steps {
+                timeout(time: 5, unit: 'MINUTES') {
+                    input message: 'Deploy the built artifact?', ok: 'Proceed'
+                }
+            }
+        }
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
             }
         }
     }
