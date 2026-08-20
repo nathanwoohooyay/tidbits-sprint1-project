@@ -28,5 +28,17 @@ pipeline {
                 sh 'docker run --rm team-skeleton:latest'
             }
         }
+        stage('Approval') {
+            steps {
+                timeout(time: 5, unit: 'MINUTES') {
+                    input message: 'Deploy the built artifact?', ok: 'Proceed'
+                }
+            }
+        }
+        stage('Archive') {
+            steps {
+                archiveArtifacts artifacts: 'target/*.jar', fingerprint: true
+            }
+        }
     }
 }
