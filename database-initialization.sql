@@ -15,7 +15,7 @@ CREATE TABLE clients (
 CREATE TABLE instruments (
     instrument_id INT PRIMARY KEY,
     ticker TEXT NOT NULL UNIQUE,
-        CHECK (LENGTH(ticker) BETWEEN 1 AND 4),
+        CHECK (LENGTH(ticker) BETWEEN 1 AND 8),
     name TEXT NOT NULL
 );
 
