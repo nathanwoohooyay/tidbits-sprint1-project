@@ -21,7 +21,8 @@ CREATE TABLE instruments (
 
 CREATE TABLE model_portfolios (
     model_portfolio_id INT PRIMARY KEY,
-    name TEXT NOT NULL UNIQUE
+    name TEXT NOT NULL UNIQUE,
+    description TEXT
 );
 
 CREATE TABLE clients_holdings (
